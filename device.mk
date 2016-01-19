@@ -39,12 +39,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dateformat=dd-MM-yyyy \
     persist.sys.timezone=Asia/Shanghai
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-        ro.secure=0 \
-        ro.allow.mock.location=1 \
-        ro.adb.secure=0 \
-        ro.debuggable=1
-
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ramdisk/init.qcom.rc:root/init.qcom.rc \
@@ -247,6 +241,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Power Profile
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.aries.power_profile=middle
+
+# ADB & USB
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=mtp
+
+# ADB Debug
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.debuggable=1 \
+    persist.sys.usb.config=mtp,adb
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \

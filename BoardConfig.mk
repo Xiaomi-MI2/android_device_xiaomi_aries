@@ -16,8 +16,6 @@
 
 LOCAL_PATH := device/xiaomi/aries
 
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
-
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -113,9 +111,7 @@ BOARD_USES_ALSA_AUDIO                   := true
 TARGET_USES_QCOM_MM_AUDIO               := true
 TARGET_USES_QCOM_COMPRESSED_AUDIO       := true
 BOARD_USES_LEGACY_ALSA_AUDIO            := true
-QCOM_ANC_HEADSET_ENABLED                := true
-QCOM_PROXY_DEVICE_ENABLED               := true
-AUDIO_FEATURE_ENABLED_PROXY_DEVICE      := true
+QCOM_ANC_HEADSET_ENABLED := true
 QCOM_FLUENCE_ENABLED := false
 TUNNEL_MODE_SUPPORTS_AMRWB              := true
 USE_TUNNEL_MODE                         := true

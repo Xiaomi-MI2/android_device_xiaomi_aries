@@ -251,8 +251,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.adb.secure=0 \
-    ro.debuggable=1 \
-    persist.sys.usb.config=mtp,adb
+    ro.debuggable=1
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \

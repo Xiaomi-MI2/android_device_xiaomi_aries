@@ -58,7 +58,7 @@ BOARD_RAMDISK_OFFSET  := 0x02000000
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000
 BOARD_KERNEL_CMDLINE  := console=null androidboot.hardware=qcom ehci-hcd.park=3 maxcpus=2 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 
-#kernel
+# Kernel
 TARGET_KERNEL_CONFIG := aries-perf-user_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/aries
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
@@ -142,11 +142,16 @@ BLUETOOTH_HCI_USE_MCT                       := true
 ENABLE_WEBGL            := true
 TARGET_FORCE_CPU_UPLOAD := true
 
+# Dexopt
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_ONLY := false
+
 # Recovery
 TARGET_RECOVERY_FSTAB            := $(LOCAL_PATH)/rootdir/ramdisk/fstab.qcom
 RECOVERY_FSTAB_VERSION           := 2
 TARGET_RECOVERY_PIXEL_FORMAT     := "RGBX_8888"
 BOARD_HAS_NO_SELECT_BUTTON       := true
+TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 31457280          # 32MB
@@ -168,9 +173,7 @@ SUPERUSER_EMBEDDED:= true
 
 PRODUCT_BOOT_JARS += \
     qcom.fmradio \
-    qcmediaplayer \
-    org.codeaurora.Performance \
-    tcmiface
+    qcmediaplayer
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true

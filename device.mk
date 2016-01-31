@@ -348,7 +348,6 @@ PRODUCT_PACKAGES += \
 # CodeAurora
 PRODUCT_PACKAGES += \
     qcmediaplayer \
-    org.codeaurora.Performance \
     BluetoothExt \
     javax.btobex \
     libattrib_static \
@@ -362,8 +361,7 @@ PRODUCT_PACKAGES += \
     services-ext \
     services \
     ethernet-service \
-    wifi-service \
-    tcmiface
+    wifi-service
 
 # Qualcomm random numbers generated
 PRODUCT_PACKAGES += \
